@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Find Your Inner Fursona</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', sans-serif;
+      background: linear-gradient(to bottom, #ffccff, #ccffff);
+      color: #333;
+    }
+    header {
+      background-color: #ff66cc;
+      padding: 1rem;
+      text-align: center;
+      color: white;
+      font-size: 2rem;
+      text-shadow: 1px 1px #444;
+    }
+    .intro {
+      padding: 2rem;
+      text-align: center;
+    }
+    .fursona-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .fursona-gallery img {
+      width: 100%;
+      border-radius: 1rem;
+      border: 3px solid #ff99ff;
+    }
+    #chat-box {
+      background: white;
+      padding: 1rem;
+      margin: 2rem;
+      border: 2px dashed #ff66cc;
+      border-radius: 1rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #chat {
+      height: 200px;
+      overflow-y: auto;
+      background: #f9f9f9;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      border-radius: 5px;
+    }
+    .chat-input {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .chat-input input {
+      flex: 1;
+      padding: 0.5rem;
+    }
+    .chat-input button {
+      padding: 0.5rem 1rem;
+      background: #ff66cc;
+      border: none;
+      color: white;
+      border-radius: 5px;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body> <section style="text-align:center; padding:2rem;">
+  <h3>✨ What’s Your Inner Fursona? ✨</h3>
+  <button onclick="runQuiz()">Take the Quiz</button>
+  <div id="quiz-result" style="margin-top:1rem; font-size:1.2rem;"></div>
+</section>
+  <header>
+    🐾 Find Your Inner Fursona 🐾
+  </header>
+
+  <div class="intro">
+    Welcome to the gay furry gateway! Explore thicc fursona inspiration and connect with your fluffier self 💖
+  </div>
+
+  <section class="fursona-gallery">
+    <img src="https://via.placeholder.com/300x300?text=Fat+Furry+1" alt="Fat Furry 1">
+    <img src="https://via.placeholder.com/300x300?text=Fat+Furry+2" alt="Fat Furry 2">
+    <img src="https://via.placeholder.com/300x300?text=Fat+Furry+3" alt="Fat Furry 3">
+    <!-- Replace with actual furry art or use furry artist credits -->
+  </section>
+
+  <div id="chat-box">
+    <h3>Live Fluffy Chat 💬</h3>
+    <div id="chat"></div>
+    <div class="chat-input">
+      <input type="text" id="chatMessage" placeholder="Say something...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <footer>
+    🌈 Made with paws & pride | 2025
+  </footer>
+
+  <script>
+    function runQuiz() {
+  const options = [
+    "Chonky Pink Dragon 🐉",
+    "Anxious Rainbow Fox 🦊",
+    "Sassy Disco Raccoon 🦝",
+    "Sleepy Otter in a Crop Top 🦦"
+  ];
+  const result = options[Math.floor(Math.random() * options.length)];
+  document.getElementById("quiz-result").textContent = "You are: " + result;
+}
+    const chat = document.getElementById('chat');
+    function sendMessage() {
+      const input = document.getElementById('chatMessage');
+      if (input.value.trim()) {
+        const msg = document.createElement('div');
+        msg.textContent = "You: " + input.value;
+        chat.appendChild(msg);
+        input.value = '';
+        chat.scrollTop = chat.scrollHeight;
+      }
+    }
+  </script>
+</body>
+</html>
